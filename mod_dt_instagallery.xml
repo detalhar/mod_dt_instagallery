@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+	<name>mod_dt_instagallery</name>
+	<author>detalhar</author>
+	<creationDate>2015/10/19</creationDate>
+	<authorEmail>developer@detalharweb.com.br</authorEmail>
+	<authorURL>http://www.detalharweb.com.br</authorURL>
+	<copyright>Copyright (C) detalhar. All rights reserved</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html or see LICENSE.txt</license>
+	<version>0.1.0</version>
+	<description>MOD_DT_INSTAGALLERY_DESC</description>
+	<files>
+		<filename module="mod_dt_instagallery">mod_dt_instagallery.php</filename>
+		<folder>assets</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>mod_dt_instagallery.xml</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+		<fieldset name="basic">
+			<field
+				name="id"
+				type="text"
+				label="MOD_DT_INSTAGALLERY_CLIENT_ID"
+				description="MOD_DT_INSTAGALLERY_CLIENT_ID_DESC"
+				/>
+			<field
+				name="get"
+				type="groupedlist"
+				label="MOD_DT_INSTAGALLERY_GET"
+				default="user" >
+				<option value="user">MOD_DT_INSTAGALLERY_GET_USER</option>
+				<option value="tagged">MOD_DT_INSTAGALLERY_GET_TAGGED</option>
+				<option value="popular">MOD_DT_INSTAGALLERY_GET_POPULAR</option>
+			</field>
+			<field
+				name="username"
+				type="text"
+				label="MOD_DT_INSTAGALLERY_USERNAME"
+				description="MOD_DT_INSTAGALLERY_USERNAME_DESC"
+				default="detalharweb"
+				/>
+				<field
+				name="count"
+				type="text"
+				label="MOD_DT_INSTAGALLERY_COUNT_IMAGES"
+				description="MOD_DT_INSTAGALLERY_COUNT_IMAGES_DESC"
+				default="8"
+				/>
+				<field
+				name="width"
+				type="text"
+				label="MOD_DT_INSTAGALLERY_WIDTH_IMAGE"
+				description="MOD_DT_INSTAGALLERY_WIDTH_IMAGE_DESC"
+				default="150"
+				/>
+		</fieldset>
+
+		<fieldset name="advanced">
+			<field
+				name="layout"
+				type="modulelayout"
+				label="JFIELD_ALT_LAYOUT_LABEL"
+				description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				/>
+			<field
+				name="moduleclass_sfx"
+				type="textarea"
+				rows="3"
+				label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+				description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			
+		</fieldset>
+	</fields>
+	</config>
+</extension>
