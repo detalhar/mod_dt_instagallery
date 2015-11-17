@@ -33,6 +33,7 @@
 				name="get"
 				type="groupedlist"
 				label="MOD_DT_INSTAGALLERY_GET"
+        description="MOD_DT_INSTAGALLERY_GET_DESC"
 				default="user" >
 				<option value="user">MOD_DT_INSTAGALLERY_GET_USER</option>
 				<option value="tagged">MOD_DT_INSTAGALLERY_GET_TAGGED</option>

@@ -32,9 +32,10 @@ if (!empty($client_id)) {
 
     case 'popular':
     //API Instagram - Get Popular
-    $url = 'https://api.instagram.com/v1/media/popular?client_id='. $client_id .'&count='.$count;
+    $url = 'https://api.instagram.com/v1/media/popular?client_id='.$client_id.'&count='.$count;
     $info = file_get_contents($url);
     $data = json_decode($info);
+    break;
 
     default:
 
