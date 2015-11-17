@@ -21,20 +21,35 @@ $doc = JFactory::getDocument();
 $client_id = $id;
 
 if (!empty($client_id)) {
+  switch ($get) {
 
+    case 'tagged':
+    //API Instagram  - Get tagged
+    $url = 'https://api.instagram.com/v1/tags/'. $username .'/media/recent?client_id='.$client_id.'&count='.$count;
+    $info = file_get_contents($url);
+    $data = json_decode($info);
+    break;
 
-//API Instagram
-$url = 'https://api.instagram.com/v1/users/search?q=' .$username. '&client_id='.$client_id;
+    case 'popular':
+    //API Instagram - Get Popular
+    $url = 'https://api.instagram.com/v1/media/popular?client_id='. $client_id .'&count='.$count;
+    $info = file_get_contents($url);
+    $data = json_decode($info);
 
-$info = file_get_contents($url);
-$data = json_decode($info, true);
-$user_id = $data['data'][0]['id'];
+    default:
 
-// get recent images
+    //API Instagram
+    $url = 'https://api.instagram.com/v1/users/search?q=' .$username. '&client_id='.$client_id;
+    $info = file_get_contents($url);
+    $data = json_decode($info, true);
+    $user_id = $data['data'][0]['id'];
 
-$url = 'https://api.instagram.com/v1/users/' .$user_id. '/media/recent/?client_id='.$client_id.'&count=' .$count;
-$info = file_get_contents($url);
-$data = json_decode($info);
+    // get recent user images
+    $url = 'https://api.instagram.com/v1/users/' .$user_id. '/media/recent/?client_id='.$client_id.'&count=' .$count;
+    $info = file_get_contents($url);
+    $data = json_decode($info);
+    break;
+}
 
 // Show Module
   echo ($widthModule !== 0) ? '<div class="dt-instagallery" style="width:'.$widthModule.'px">' : '<div class="dt-instagallery" style="width:100%">';
