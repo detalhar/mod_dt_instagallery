@@ -33,7 +33,7 @@ $url = 'https://api.instagram.com/v1/users/' .$user_id. '/media/recent/?client_i
 $info = file_get_contents($url);
 $data = json_decode($info);
 
-echo '<div class="dt-instagallery">';
+echo '<div class="dt-instagallery" style="width:'.$widthModule.'px">';
 echo '<ul>';
 if (!empty($data)) {
     foreach ($data->data as $images) {

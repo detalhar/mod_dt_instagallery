@@ -29,6 +29,7 @@ $get = $params->get('get');
 $username = $params->get('username');
 $count = (int)$params->get('count', 8);
 $width = (int)$params->get('width', 150);
+$widthModule = (int)$params->get('widthModule');
 
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));

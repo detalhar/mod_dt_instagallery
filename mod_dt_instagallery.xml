@@ -56,6 +56,13 @@
 				description="MOD_DT_INSTAGALLERY_WIDTH_IMAGE_DESC"
 				default="150"
 				/>
+				<field
+				name="widthModule"
+				type="text"
+				label="MOD_DT_INSTAGALLERY_WIDTH_MODULE"
+				description="MOD_DT_INSTAGALLERY_WIDTH_MODULE_DESC"
+				default="250"
+				/>
 		</fieldset>
 
 		<fieldset name="advanced">
