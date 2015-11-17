@@ -18,9 +18,12 @@
 
 defined('_JEXEC') or die('Access Restricted');
 $doc = JFactory::getDocument();
+$client_id = $id;
+
+if (!empty($client_id)) {
+
 
 //API Instagram
-$client_id = $id;
 $url = 'https://api.instagram.com/v1/users/search?q=' .$username. '&client_id='.$client_id;
 
 $info = file_get_contents($url);
@@ -33,22 +36,30 @@ $url = 'https://api.instagram.com/v1/users/' .$user_id. '/media/recent/?client_i
 $info = file_get_contents($url);
 $data = json_decode($info);
 
-echo '<div class="dt-instagallery" style="width:'.$widthModule.'px">';
-echo '<ul>';
-if (!empty($data)) {
-    foreach ($data->data as $images) {
-        echo '<li><a class="dt-insta-photo" href="'.$images->images->standard_resolution->url.'" rel="lightbox">';
-        echo '<img class="dt-photo" src="'.$images->images->thumbnail->url.'" alt="" />';
-        echo '</a></li>';
-    }
-}
-echo '</ul>';
-echo '</div>';
+// Show Module
+  echo ($widthModule !== 0) ? '<div class="dt-instagallery" style="width:'.$widthModule.'px">' : '<div class="dt-instagallery" style="width:100%">';
+  echo '<ul>';
 
-$doc->addScriptDeclaration("
+  if (!empty($data)) {
+    foreach ($data->data as $images) {
+      echo '<li><a class="dt-insta-photo" href="'.$images->images->standard_resolution->url.'" rel="lightbox">';
+      echo '<img class="dt-photo" src="'.$images->images->thumbnail->url.'" width="'.$width.'"alt="" />';
+      echo '</a></li>';
+    }
+  }
+  echo '</ul>';
+  echo '</div>';
+
+  $doc->addScriptDeclaration("
     window.onload = function(){
-    baguetteBox.run('.dt-instagallery', {
+      baguetteBox.run('.dt-instagallery', {
         caption:true,
         animation: 'fadeIn',
-    }
-    );}");
+      }
+      );}");
+
+}
+
+else {
+  echo '<div><p>' . JTEXT::_('MOD_DT_INSTAGALLERY_ERROR') .'</p></div>';
+}

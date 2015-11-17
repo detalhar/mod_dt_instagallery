@@ -61,7 +61,6 @@
 				type="text"
 				label="MOD_DT_INSTAGALLERY_WIDTH_MODULE"
 				description="MOD_DT_INSTAGALLERY_WIDTH_MODULE_DESC"
-				default="250"
 				/>
 		</fieldset>
 

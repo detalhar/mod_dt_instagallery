@@ -1,9 +1,9 @@
 *{
 	box-sizing: border-box;
-	-webkit-transition: 0.3s ease;
-	-moz-transition: 0.3s ease;
-	-ms-transition: 0.3s ease;
-	transition: 0.3s ease;
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
 }
 
 .dt-instagallery {
@@ -19,17 +19,20 @@
 	display: flex;
 	flex-flow: row wrap;
 	align-items: stretch;
-	/*justify-content: space-between;*/
 }
 
 .dt-insta-photo {
-	/*flex:1;*/
+	margin: 3px;
 	display: block;
-	background: #333;
+	background: rgba(44, 62, 80,1.0);
 	opacity: 1;
+	overflow: hidden;
 }
 
 .dt-photo:hover {
-	opacity: 0.55;
-
+	opacity: 0.60;
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
 }
