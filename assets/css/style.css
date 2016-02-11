@@ -8,15 +8,26 @@
 
 .dt-instagallery {
 	margin: 0;
-	padding: 0;
-	max-width: 100%;
+	padding: 10px 0;
 	width:100%;
 	height: auto;
+  border: 1px solid #ccc;
+  border-radius:5px;
+}
+
+.dt-instagallery .dt-header {
+  font: 300 normal 20px;
+  color: #333;
+  /*color: #fff;*/
+  padding: 10px;
+  /*background: #285989;*/
+
 }
 
 .dt-instagallery ul {
 	list-style: none;
   margin: 0;
+  /*padding: 0;*/
   padding: 10px;
 	display: flex;
 	flex-flow: row wrap;
@@ -37,4 +48,23 @@
 	-moz-transform: scale(1.2);
 	-ms-transform: scale(1.2);
 	transform: scale(1.2);
+}
+
+.dt-btn-follow {
+  color: #fff;
+  font-size:13px;
+  background: #285989;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 3px;
+  display: block;
+  opacity: 0.85;
+  width: 80%;
+  margin: 0 auto;
+  transition: .4s;
+}
+
+.dt-btn-follow:hover {
+  color: #fff;
+  opacity: 1
 }

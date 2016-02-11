@@ -54,6 +54,7 @@ if (!empty($client_id)) {
 
 // Show Module
   echo ($widthModule !== 0) ? '<div class="dt-instagallery" style="width:'.$widthModule.'px">' : '<div class="dt-instagallery" style="width:100%">';
+  echo '<div class="dt-header">'.$username.'</div>';
   echo '<ul>';
 
   if (!empty($data)) {
@@ -64,6 +65,8 @@ if (!empty($client_id)) {
     }
   }
   echo '</ul>';
+  echo '<a href="https://www.instagram.com/detalharweb/?ref=badge" class="dt-btn-follow">'.JTEXT::_('MOD_DT_INSTAGALLERY_BTN_FOLLOW').'</a>';
+  // echo '<a href="https://www.instagram.com/detalharweb/?ref=badge" class="btn-follow"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a>';
   echo '</div>';
 
   $doc->addScriptDeclaration("
@@ -73,9 +76,13 @@ if (!empty($client_id)) {
         animation: 'fadeIn',
       }
       );}");
-
 }
 
 else {
   echo '<div><p>' . JTEXT::_('MOD_DT_INSTAGALLERY_ERROR') .'</p></div>';
 }
+
+// echo '<pre>';
+// var_dump($data);
+
+// '</pre>';
