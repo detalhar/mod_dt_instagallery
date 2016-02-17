@@ -11,23 +11,13 @@
 	padding: 10px 0;
 	width:100%;
 	height: auto;
-  border: 1px solid #ccc;
-  border-radius:5px;
-}
-
-.dt-instagallery .dt-header {
-  font: 300 normal 20px;
-  color: #333;
-  /*color: #fff;*/
-  padding: 10px;
-  /*background: #285989;*/
-
+  border-top: 1px solid #ccc;
 }
 
 .dt-instagallery ul {
 	list-style: none;
   margin: 0;
-  /*padding: 0;*/
+  padding: 0;
   padding: 10px;
 	display: flex;
 	flex-flow: row wrap;
@@ -54,7 +44,7 @@
   color: #fff;
   font-size:13px;
   background: #285989;
-  text-align: center;
+  text-align: left;
   padding: 3px 0;
   border-radius: 3px;
   display: block;
@@ -67,4 +57,14 @@
 .dt-btn-follow:hover {
   color: #fff;
   opacity: 1
+}
+
+.dt-btn-follow:before {
+  content:"";
+  position: relative;
+  float: left;
+  margin: 4px 10px 0 10px;
+  width: 16px;
+  height: 16px;
+  background:url(../img/logo-instagram.png) left center no-repeat;
 }
